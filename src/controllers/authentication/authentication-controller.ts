@@ -39,11 +39,11 @@ import {
   SignUpWithUsernameAndPasswordError,
   type LogInWithUsernameAndPasswordResult,
   type SignUpWithUsernameAndPasswordResult,
-} from "./authentication-types";
+} from "./authentication-types.ts";
 
 import jwt from "jsonwebtoken";
-import { jwtsecretKey } from "../../../environment";
-import { prismaClient } from "../../extras/prisma";
+import { jwtsecretKey } from "/Users/dhruv/Desktop/developer/hackernews-server/enviornment.ts";
+import { prismaClient } from "/Users/dhruv/Desktop/developer/hackernews-server/src/extras/prisma.ts";
 
 const createJWToken = (parameters: {
   id: string;
