@@ -1,5 +1,5 @@
-import { prismaClient } from "../../extras/prisma";
-import type { getPostsResult } from "./posts-types";
+import { prismaClient } from "/Users/dhruv/Desktop/developer/hackernews-server/src/extras/prisma.ts";
+import type { getPostsResult } from "/Users/dhruv/Desktop/developer/hackernews-server/src/controllers/posts/posts-types.ts";
 
 export const getMePosts = async (parameters: {
   userId: string;
