@@ -1,9 +1,9 @@
 import { Hono } from "hono";
-import { authenticationRoutes } from "./authentication-routes";
-import { usersRoutes } from "./users-routes";
-import { postsRoutes } from "./posts-routes";
-import { likesRoutes } from "./likes-routes";
-import { commentsRoutes } from "./comments-routes";
+import { authenticationRoutes } from "./authentication-routes.ts";
+import { usersRoutes } from "./users-routes.ts";
+import { postsRoutes } from "./posts-routes.ts";
+import { likesRoutes } from "./likes-routes.ts";
+import { commentsRoutes } from "./comments-routes.ts";
 
 export const allRoutes = new Hono();
 

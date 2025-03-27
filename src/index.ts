@@ -1,6 +1,6 @@
 import "dotenv/config"
 import { serve } from "@hono/node-server";
-import { allRoutes } from "./routes/routes";
+import { allRoutes } from "/Users/dhruv/Desktop/developer/hackernews-server/src/routes/routes.ts";
 
 
 serve(allRoutes);
