@@ -4,7 +4,7 @@ import {
   type CreateCommentResult,
   type GetCommentsResult,
   type UpdateCommentResult,
-} from "./comments-types";
+} from "./comments-types.ts";
 
 export const getCommentsOnPost = async (parameters: {
   postId: string;
