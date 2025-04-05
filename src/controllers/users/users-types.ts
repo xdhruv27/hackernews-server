@@ -10,6 +10,7 @@ export enum GetMeError {
 
 
 export type GetAllUsersResult = {
-    users : User[];
+  users: User[];
 };
+
 

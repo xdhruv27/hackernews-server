@@ -1,49 +1,14 @@
-// import "dotenv/config";
-// import jwt from "jsonwebtoken";
-
-// const secretKey = process.env.SECRET_KEY;
-// console.log(secretKey)
-
-// const jwtsecretKey = process.env.JWT_SECRET_KEY || process.exit(1);
-// console.log(jwtsecretKey)
-
-// const payload: jwt.JwtPayload = {
-//     iss: "https://github.com/",
-//     sub: "kethan3"
-// };
-
-// const secretKey = "HelloWorld@1234";
-// const token = jwt.sign(payload,secretKey,{
-
-//   algorithm : "HS256",
-//   expiresIn : "7d"
-// })
-
-// console.log("toke",token)
-
-// try{
-
-//   const verPayload = jwt.verify(token,secretKey)
-
-//   console.log("verified payload :", verPayload)
-// }catch(e)
-// {
-//   console.log("error:" , e);
-// }
-// const decodedPayload = jwt.decode(token);
-// console.log("Decoded payload", decodedPayload)
-
 import { createHash } from "crypto";
 import {
   LogInWithUsernameAndPasswordError,
   SignUpWithUsernameAndPasswordError,
   type LogInWithUsernameAndPasswordResult,
   type SignUpWithUsernameAndPasswordResult,
-} from "./authentication-types.ts";
+} from "./authentication-types.js";
 
 import jwt from "jsonwebtoken";
-import { jwtsecretKey } from "/Users/dhruv/Desktop/developer/hackernews-server/enviornment.ts";
-import { prismaClient } from "/Users/dhruv/Desktop/developer/hackernews-server/src/extras/prisma.ts";
+import { jwtSecretKey } from "../../environment.js";
+import { prismaClient } from "../../extras/prisma.js";
 
 const createJWToken = (parameters: {
   id: string;
@@ -56,7 +21,7 @@ const createJWToken = (parameters: {
     username: parameters.username,
   };
 
-  const token = jwt.sign(jwtPayload, jwtsecretKey, {
+  const token = jwt.sign(jwtPayload, jwtSecretKey, {
     expiresIn: "30d",
   });
 

@@ -1,5 +1,5 @@
-import { prismaClient } from "/Users/dhruv/Desktop/developer/hackernews-server/src/extras/prisma.ts";
-import { GetMeError,  type GetAllUsersResult, type GetMeResult,  } from "/Users/dhruv/Desktop/developer/hackernews-server/src/controllers/users/users-types.ts";
+import { prismaClient } from "../../extras/prisma.js";
+import { GetMeError,  type GetAllUsersResult, type GetMeResult,  } from "./users-types.js";
 
 export const getMe = async (parameters: { userId: string }): Promise<GetMeResult> => {
   const user = await prismaClient.user.findUnique({
@@ -18,10 +18,11 @@ export const getMe = async (parameters: { userId: string }): Promise<GetMeResult
 };
 
 
-export const getAllUsers = async () : Promise<GetAllUsersResult>=>{
-    const users = await prismaClient.user.findMany();
- 
-    return {
-        users,
-        }
+
+export const getAllUsers = async (): Promise<GetAllUsersResult> => {
+  const users = await prismaClient.user.findMany();
+
+  return {
+    users,
+  };
 };
