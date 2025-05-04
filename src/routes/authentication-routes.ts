@@ -4,14 +4,14 @@ import {
   LogInWithUsernameAndPasswordError,
   SignUpWithUsernameAndPasswordError,
 } from "../controllers/authentication/authentication-types.js";
-import { logInWithUsernameAndPassword, signUpWithUsernameAndpassword } from "../controllers/authentication/authentication-controller.js";
+import { logInWithUsernameAndPassword, signUpWithUsernameAndPassword } from "../controllers/authentication/authentication-controller.js";
 
 export const authenticationRoutes = new Hono();
 
 authenticationRoutes.post("/sign-up", async (c) => {
   const { username, password, name, email } = await c.req.json();
   try {
-    const result = await signUpWithUsernameAndpassword({
+    const result = await signUpWithUsernameAndPassword({
       username,
       password,
       name,
